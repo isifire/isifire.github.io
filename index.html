@@ -1,70 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Web</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('nav');
-      nav.classList.toggle('hidden');
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  </script>
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1d;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    header span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 15px;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #2b2b2b;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #eaeaea;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ff7e5f;
+      color: #1a1a1d;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ff7e5f;
+      padding-bottom: 10px;
+      color: #ff7e5f;
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      color: #feb47b;
+      margin-bottom: 10px;
+    }
+
+    section h3 a {
+      text-decoration: none;
+      color: #feb47b;
+      transition: color 0.3s;
+    }
+
+    section h3 a:hover {
+      color: #ff7e5f;
+    }
+
+    section p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #eaeaea;
+    }
+
+    section small {
+      display: block;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #2b2b2b;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #ff7e5f;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #feb47b;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-black text-white font-sans">
-  <header class="bg-gray-800 p-4 text-center">
-    <h1 class="text-3xl font-bold">John Doe</h1>
-    <button 
-      class="mt-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none focus:ring"
-      onclick="toggleMenu()">
-      ☰ Menu
-    </button>
+<body>
+  <header>
+    Isidro Benítez
+    <span>IT Engineer | Cybersecurity | Content Creator</span>
   </header>
 
-  <div class="flex">
-    <nav class="bg-gray-900 w-64 p-4 hidden md:block">
-      <ul class="space-y-4">
-        <li><a href="#about" class="block text-lg hover:text-gray-300">About Me</a></li>
-        <li><a href="#career" class="block text-lg hover:text-gray-300">Career</a></li>
-        <li><a href="#projects" class="block text-lg hover:text-gray-300">Projects</a></li>
-        <li><a href="#others" class="block text-lg hover:text-gray-300">Others</a></li>
-      </ul>
-    </nav>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#career">Career</a>
+    <a href="#projects">Projects</a>
+    <a href="#others">Others</a>
+  </nav>
 
-    <main class="flex-1 p-8 space-y-16">
-      <section id="about">
-        <h2 class="text-2xl font-bold mb-4">About Me</h2>
-        <p class="text-lg">Hello! I'm John Doe, a passionate software engineer with a love for creating impactful and innovative solutions. I specialize in developing robust and user-friendly applications that make a difference. My journey in technology began during my high school years, where I fell in love with coding and problem-solving.</p>
-        <p class="text-lg">I hold a degree in Computer Science from Tech University, where I excelled in software engineering, algorithms, and system design. Outside of work, I enjoy exploring the latest tech trends and contributing to open-source projects.</p>
-      </section>
-      <section id="career">
-        <h2 class="text-2xl font-bold mb-4">Career</h2>
-        <p class="text-lg">I have worked in the tech industry for over 5 years, specializing in full-stack development. My expertise spans various technologies including JavaScript, Python, and cloud computing. Currently, I am a senior developer at TechCorp, leading a team of talented engineers.</p>
-        <p class="text-lg">My career highlights include:</p>
-        <ul class="list-disc ml-5 text-lg">
-          <li>Redesigning the company’s e-commerce platform, which increased user engagement by 40%.</li>
-          <li>Developing a custom analytics tool that streamlined data visualization for the marketing team.</li>
-          <li>Mentoring junior developers, fostering their growth and contributing to the team’s success.</li>
-        </ul>
-      </section>
-      <section id="projects">
-        <h2 class="text-2xl font-bold mb-4">Projects</h2>
-        <p class="text-lg">Here are a few notable projects I've worked on:</p>
-        <ul class="list-disc ml-5 text-lg">
-          <li><strong>Project Alpha:</strong> A machine learning tool for data analysis, enabling businesses to extract actionable insights from large datasets.</li>
-          <li><strong>DevConnect:</strong> A social platform for developers to collaborate, share ideas, and grow their professional network.</li>
-          <li><strong>EcoTracker:</strong> A mobile app to track and reduce your carbon footprint, with features like eco-friendly tips and real-time impact reports.</li>
-        </ul>
-        <p class="text-lg">These projects not only allowed me to apply my technical skills but also helped me grow as a collaborative team player and problem-solver.</p>
-      </section>
-      <section id="others">
-        <h2 class="text-2xl font-bold mb-4">Others</h2>
-        <p class="text-lg">In my free time, I enjoy hiking, reading science fiction novels, and experimenting with new technologies. I’m particularly fascinated by advancements in artificial intelligence and blockchain technology. I believe in lifelong learning and often take online courses to enhance my skills.</p>
-        <p class="text-lg">Feel free to connect with me on <a href="#" class="text-blue-500 hover:underline">LinkedIn</a> or check out my <a href="#" class="text-blue-500 hover:underline">GitHub</a>. I’m always open to exciting opportunities and collaborations!</p>
-      </section>
-    </main>
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Welcome to my personal webpage! My name is Isidro Benítez, and I am a passionate IT Engineer. I thrive on solving complex problems and delivering user-friendly solutions. This space showcases my journey, projects, and interests.</p>
+    </section>
+
+    <section id="career">
+      <h2>Career</h2>
+      <p>With over 10 years of self-directed learning, complemented by professional training and academic pursuits, I have built a strong foundation in technology. My journey began with a vocational degree in IT Systems Administration (ASIR), where I honed practical skills in managing networks and systems.</p>
+      <p>Building on this, I pursued a degree in Computer Engineering specializing in Information Technologies. This academic experience broadened my expertise in software development, systems design, and emerging technologies. Throughout this time, I have worked on personal projects, collaborated with peers, and stayed committed to continuous growth in the ever-evolving tech landscape.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3><a href="https://haloespana.es/">Maintenance of the Halo España Website</a></h3>
+        <small>December 2023 - Present</small>
+        <p>I am responsible for the installation, configuration, and maintenance of the web server for the Halo España community. The website is based on WordPress and runs on a LAMP infrastructure. My role focuses on technical management, ensuring everything operates smoothly, while also contributing articles to the website in my spare time.</p>
+      </div>
+
+      <div class="project">
+        <h3><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2938702672">The Flood: The Forgotten Exile</a></h3>
+        <small>April 2023 - Present</small>
+        <p>I worked on adapting the original version of the mod "The Flood: The Forgotten Exile" from Halo: Custom Edition to Halo: The Master Chief Collection. My responsibilities included adapting and recompiling the map, fixing bugs, and programming the code for the cooperative version of the mod, as Halo CE did not originally support this feature. I also maintain the mod on the Steam Workshop, handle feedback, and ensure its proper functionality.</p>
+      </div>
+
+      <div class="project">
+        <h3><a href="https://www.linkedin.com/in/isidro-benitez/details/projects/1703805726165/single-media-viewer/?profileId=ACoAACwzD4gBCkqgN3rfRgv431dVPmH_nKNpQv8">3D Printing Remote Server</a></h3>
+        <small>May 2022</small>
+        <p>A Linux server based on the Raspbian distribution, combined with Octoprint and automated using Shell scripting. The setup allows connections either via DDNS over the Internet or through an OpenVPN server. It also includes an FTP server and a video streaming system for real-time print monitoring. Hardware used includes a Raspberry Pi B2 and a Creality Ender 3 Pro printer. This project earned the highest grade in my vocational training final project.</p>
+      </div>
+    </section>
+
+    <section id="others">
+      <h2>Others</h2>
+      <p>In my free time, I enjoy hiking, experimenting with new technologies, and contributing to open-source projects. I also have a keen interest in artificial intelligence and its potential to shape our future.</p>
+      <p>Feel free to connect with me on <a href="#">LinkedIn</a> or check out my <a href="#">GitHub</a>.</p>
+    </section>
   </div>
+
+  <footer>
+    &copy; 2025 Isidro Benítez. Built with passion. <a href="#">Privacy Policy</a>
+  </footer>
 </body>
 </html>
