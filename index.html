@@ -4,139 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Web</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: #222;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    .nav-container {
-      position: relative;
-    }
-
-    nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #111;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    nav.open {
-      transform: translateX(0);
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem;
-      padding: 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #333;
-    }
-
-    .menu-button {
-      background-color: #222;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      border-radius: 5px;
-    }
-
-    main {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-    }
-
-    section {
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .content {
-      flex: 1;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function toggleMenu() {
       const nav = document.querySelector('nav');
-      nav.classList.toggle('open');
+      nav.classList.toggle('hidden');
     }
   </script>
 </head>
-<body>
-  <header>
-    <h1>Your Name</h1>
-    <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+<body class="bg-black text-white font-sans">
+  <header class="bg-gray-800 p-4 text-center">
+    <h1 class="text-3xl font-bold">Your Name</h1>
+    <button 
+      class="mt-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none focus:ring"
+      onclick="toggleMenu()">
+      ☰ Menu
+    </button>
   </header>
-  <div class="nav-container">
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#career">Career</a>
-      <a href="#projects">Projects</a>
-      <a href="#others">Others</a>
+
+  <div class="flex">
+    <nav class="bg-gray-900 w-64 p-4 hidden md:block">
+      <ul class="space-y-4">
+        <li><a href="#about" class="block text-lg hover:text-gray-300">About Me</a></li>
+        <li><a href="#career" class="block text-lg hover:text-gray-300">Career</a></li>
+        <li><a href="#projects" class="block text-lg hover:text-gray-300">Projects</a></li>
+        <li><a href="#others" class="block text-lg hover:text-gray-300">Others</a></li>
+      </ul>
     </nav>
+
+    <main class="flex-1 p-8 space-y-16">
+      <section id="about">
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <p class="text-lg">Welcome to my personal webpage! Here, you'll find information about my career, projects, and more.</p>
+      </section>
+      <section id="career">
+        <h2 class="text-2xl font-bold mb-4">Career</h2>
+        <p class="text-lg">Learn about my professional journey and the experiences that have shaped my career.</p>
+      </section>
+      <section id="projects">
+        <h2 class="text-2xl font-bold mb-4">Projects</h2>
+        <p class="text-lg">Explore some of the projects I've worked on, from small personal endeavors to large collaborations.</p>
+      </section>
+      <section id="others">
+        <h2 class="text-2xl font-bold mb-4">Others</h2>
+        <p class="text-lg">Additional information, hobbies, and other interests.</p>
+      </section>
+    </main>
   </div>
-  <main class="content">
-    <section id="about">
-      <h1>About Me</h1>
-      <p>Welcome to my personal webpage! Here, you'll find information about my career, projects, and more.</p>
-    </section>
-    <section id="career">
-      <h1>Career</h1>
-      <p>Learn about my professional journey and the experiences that have shaped my career.</p>
-    </section>
-    <section id="projects">
-      <h1>Projects</h1>
-      <p>Explore some of the projects I've worked on, from small personal endeavors to large collaborations.</p>
-    </section>
-    <section id="others">
-      <h1>Others</h1>
-      <p>Additional information, hobbies, and other interests.</p>
-    </section>
-  </main>
 </body>
 </html>
