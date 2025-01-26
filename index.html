@@ -4,13 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Web</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      width: 20%;
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #333;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
-<body class="bg-black text-white flex items-center justify-center h-screen text-center">
-  <div>
-    <h1 class="text-4xl font-bold mb-4">Welcome to My Web</h1>
-    <p class="text-lg mb-2">This is a simple web page with a black background and white text.</p>
-    <p><a href="https://github.com" class="text-blue-500 hover:underline" target="_blank">Visit my GitHub</a></p>
-  </div>
+<body>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#career">Career</a>
+    <a href="#projects">Projects</a>
+    <a href="#others">Others</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h1>About Me</h1>
+      <p>Welcome to my personal webpage! Here, you'll find information about my career, projects, and more.</p>
+    </section>
+    <section id="career">
+      <h1>Career</h1>
+      <p>Learn about my professional journey and the experiences that have shaped my career.</p>
+    </section>
+    <section id="projects">
+      <h1>Projects</h1>
+      <p>Explore some of the projects I've worked on, from small personal endeavors to large collaborations.</p>
+    </section>
+    <section id="others">
+      <h1>Others</h1>
+      <p>Additional information, hobbies, and other interests.</p>
+    </section>
+  </main>
 </body>
 </html>
